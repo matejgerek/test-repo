@@ -1,3 +1,10 @@
+## [1.1.2](https://github.com/matejgerek/test-repo/compare/v1.1.1...v1.1.2) (2023-02-20)
+
+
+### :bug: Bug Fixes
+
+* test push protection ([d92e70d](https://github.com/matejgerek/test-repo/commit/d92e70d1ab82c8881583d47e38ede87b1522ee95))
+
 ## [1.1.1](https://github.com/matejgerek/test-repo/compare/v1.1.0...v1.1.1) (2023-02-20)
 
 
