@@ -1,2 +1,2 @@
 console.log('test')
-console.log('test push')
+console.log('test push protection')
