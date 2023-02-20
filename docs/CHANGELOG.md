@@ -1,3 +1,10 @@
+## [1.1.0](https://github.com/matejgerek/test-repo/compare/v1.0.1...v1.1.0) (2023-02-20)
+
+
+### :sparkles: Features
+
+* add feature ([8d1d652](https://github.com/matejgerek/test-repo/commit/8d1d652e02c410703783244bf4b3ee3cbf01dc3d))
+
 ## [1.0.1](https://github.com/matejgerek/test-repo/compare/v1.0.0...v1.0.1) (2023-02-20)
 
 
