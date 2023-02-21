@@ -1,3 +1,10 @@
+## [2.0.1](https://github.com/matejgerek/test-repo/compare/v2.0.0...v2.0.1) (2023-02-21)
+
+
+### :zap: Performance Improvements
+
+* add performance ([73294a1](https://github.com/matejgerek/test-repo/commit/73294a187524716095d6252839a6e7b324ff826d))
+
 ## [2.0.0](https://github.com/matejgerek/test-repo/compare/v1.3.0...v2.0.0) (2023-02-21)
 
 
