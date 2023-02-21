@@ -1,3 +1,10 @@
+## [1.3.0](https://github.com/matejgerek/test-repo/compare/v1.2.0...v1.3.0) (2023-02-21)
+
+
+### :sparkles: Features
+
+* change ([541cf21](https://github.com/matejgerek/test-repo/commit/541cf21f83ebe3dd2ffab8d3a94c89b4d07887be))
+
 ## [1.2.0](https://github.com/matejgerek/test-repo/compare/v1.1.2...v1.2.0) (2023-02-21)
 
 
