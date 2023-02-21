@@ -1,3 +1,14 @@
+## [2.0.0](https://github.com/matejgerek/test-repo/compare/v1.3.0...v2.0.0) (2023-02-21)
+
+
+### ⚠ BREAKING CHANGES
+
+* This is a breaking change
+
+### :sparkles: Features
+
+* adding new feature ([e87045c](https://github.com/matejgerek/test-repo/commit/e87045c476eb26c7f798a5592e0235a6eec9e049))
+
 ## [1.3.0](https://github.com/matejgerek/test-repo/compare/v1.2.0...v1.3.0) (2023-02-21)
 
 
