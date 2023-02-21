@@ -1,3 +1,10 @@
+## [1.2.0](https://github.com/matejgerek/test-repo/compare/v1.1.2...v1.2.0) (2023-02-21)
+
+
+### :sparkles: Features
+
+* remove console.log ([4ae5aca](https://github.com/matejgerek/test-repo/commit/4ae5acad5a258095d89cfdb4581295e81e6d6d0e))
+
 ## [1.1.2](https://github.com/matejgerek/test-repo/compare/v1.1.1...v1.1.2) (2023-02-20)
 
 
