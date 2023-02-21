@@ -1,1 +1,1 @@
-console.log('test breaking change');
+console.log('test performance');
