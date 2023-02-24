@@ -4,6 +4,9 @@ on:
   push:
     branches:
       - staging
+permissions:
+  contents: write
+  pull-requests: write
 jobs:
   create-staging-to-main-pr:
     runs-on: ubuntu-latest
@@ -15,7 +18,7 @@ jobs:
 
       - uses: actions/setup-node@v1
         with:
-          node-version: "16.12.0"
+          node-version: "18.0.0"
 
       - name: Cache node modules
         uses: actions/cache@v2
@@ -38,30 +41,20 @@ jobs:
         id: "detect-changes-between-staging-and-main"
         uses: fjenik/detect-changes-between-two-branches@0.0.3
         with:
-          repo-token: ${{ secrets.GITHUB_TOKEN }}
+          repo-token: ${{ secrets.SEMANTIC_RELEASE_TOKEN }}
           target-branch: main
           source-branch: staging
 
       - name: Detect changes output
         run: echo "Output of detect changes ${{ steps.detect-changes-between-staging-and-main.outputs.is-source-branch-ahead }}"
 
-      - name: Check if pr already exists
-        id: "check-if-pr-already-exists"
-        if: ${{ steps.detect-changes-between-staging-and-main.outputs.is-source-branch-ahead == 'true' }}
-        uses: fjenik/check-if-pr-exists@0.0.3
-        with:
-          repo-token: ${{ secrets.GITHUB_TOKEN }}
-          target-branch: main
-          source-branch: staging
-
       - name: Print output
         run: echo "Output of pul request already exists ${{ steps.check-if-pr-already-exists.outputs.is-pr-already-created }}"
 
       - name: Get new version and description
         id: get-new-version-and-description
-        if: ${{ steps.check-if-pr-already-exists.outputs.is-pr-already-created == 'false' }}
         env:
-          GITHUB_AUTH: ${{secrets.GITHUB_TOKEN}}
+          GITHUB_AUTH: ${{secrets.SEMANTIC_RELEASE_TOKEN}}
         run: |
           node ${GITHUB_WORKSPACE}/.github/workflows/getRcDescriptionAndNewTag
 
@@ -78,7 +71,7 @@ jobs:
         if: ${{ steps.check-if-pr-already-exists.outputs.is-pr-already-created == 'false' }}
         uses: fjenik/create-pull-request@0.0.17
         with:
-          repo-token: ${{ secrets.GITHUB_TOKEN }}
+          repo-token: ${{ secrets.SEMANTIC_RELEASE_TOKEN }}
           target-branch: main
           source-branch: staging
           pr-title: "👾 Release candidate ${{ steps.get-new-version-and-description.outputs.NEW_VERSION }}"
@@ -92,11 +85,3 @@ jobs:
             ${{ steps.get-new-version-and-description.outputs.NEW_CHANGES }}
 
             **Don't squash merge this PR**
-
-      - name: Slack Notification
-        if: ${{ steps.check-if-pr-already-exists.outputs.is-pr-already-created == 'false' }}
-        uses: tokorom/action-slack-incoming-webhook@main
-        env:
-          INCOMING_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK }}
-        with:
-          text: "👾 Hello TheExpert team! New RC (${{ steps.get-new-version-and-description.outputs.NEW_VERSION }}) was created! Please take a look at this PR and test the items on the list that are assigned to you. If the feature is tested and working as expected, mark this item as done. https://github.com/sudolabs-io/the-expert/pull/${{ steps.create-pr.outputs.pull-id }} :fire:"
