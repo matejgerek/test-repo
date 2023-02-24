@@ -17,9 +17,9 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: "lts/*"
-          cache: 'yarn'
+          cache: 'npm'
       - name: Install dependencies
-        run: yarn install
+        run: npm install
       - name: Release
         env:
           GITHUB_TOKEN: ${{ secrets.SEMANTIC_RELEASE_TOKEN }}
