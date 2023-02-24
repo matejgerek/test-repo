@@ -59,16 +59,13 @@ jobs:
           node ${GITHUB_WORKSPACE}/.github/workflows/getRcDescriptionAndNewTag
 
       - name: Check outputs new version
-        if: ${{ steps.check-if-pr-already-exists.outputs.is-pr-already-created == 'false' }}
         run: echo "Output of detect changes ${{ steps.get-new-version-and-description.outputs.NEW_VERSION }}"
 
       - name: Check outputs new changes
-        if: ${{ steps.check-if-pr-already-exists.outputs.is-pr-already-created == 'false' }}
         run: echo "Output of detect changes ${{ steps.get-new-version-and-description.outputs.NEW_CHANGES }}"
 
       - name: Create pull request
         id: "create-pr"
-        if: ${{ steps.check-if-pr-already-exists.outputs.is-pr-already-created == 'false' }}
         uses: fjenik/create-pull-request@0.0.17
         with:
           repo-token: ${{ secrets.SEMANTIC_RELEASE_TOKEN }}
