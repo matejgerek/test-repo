@@ -11,7 +11,8 @@ const getRcDescriptionAndNewTagWithSemanticRelease = async () => {
                 "@semantic-release/release-notes-generator",
                 "@semantic-release/git"
                 ],
-        });
+        },
+        );
 
         console.log(result);
     } catch (error) {
