@@ -7,7 +7,6 @@ const execAsync = promisify(exec);
 const getRcDescriptionAndNewTagWithSemanticRelease = async () => {
     try {
         const result = await semanticRelease({
-            dryRun: true,
             plugins: [
                 "@semantic-release/release-notes-generator",
                 "@semantic-release/git"
