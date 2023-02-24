@@ -1,3 +1,17 @@
+## [2.1.0](https://github.com/matejgerek/test-repo/compare/v2.0.1...v2.1.0) (2023-02-24)
+
+
+### :sparkles: Features
+
+* add console.log ([f8885ec](https://github.com/matejgerek/test-repo/commit/f8885ec42ca160ab2876e43673f31554466975fc))
+* add workflow ([ce8e0b1](https://github.com/matejgerek/test-repo/commit/ce8e0b1c81fdc8b5c47e2b47b4bedb4e488c6298))
+
+
+### :bug: Bug Fixes
+
+* add package-lock.json ([e04d65d](https://github.com/matejgerek/test-repo/commit/e04d65d81b9841e73e81b8c4f4468f509bcc638d))
+* change yarn to npm ([d0140d4](https://github.com/matejgerek/test-repo/commit/d0140d44982dc06c33c419e19011e6d5efa51d1d))
+
 ## [2.0.1](https://github.com/matejgerek/test-repo/compare/v2.0.0...v2.0.1) (2023-02-21)
 
 
