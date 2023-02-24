@@ -45,21 +45,11 @@ jobs:
       - name: Detect changes output
         run: echo "Output of detect changes ${{ steps.detect-changes-between-staging-and-main.outputs.is-source-branch-ahead }}"
 
-      - name: Check if pr already exists
-        id: "check-if-pr-already-exists"
-        if: ${{ steps.detect-changes-between-staging-and-main.outputs.is-source-branch-ahead == 'true' }}
-        uses: fjenik/check-if-pr-exists@0.0.3
-        with:
-          repo-token: ${{ secrets.GITHUB_TOKEN }}
-          target-branch: main
-          source-branch: staging
-
       - name: Print output
         run: echo "Output of pul request already exists ${{ steps.check-if-pr-already-exists.outputs.is-pr-already-created }}"
 
       - name: Get new version and description
         id: get-new-version-and-description
-        if: ${{ steps.check-if-pr-already-exists.outputs.is-pr-already-created == 'false' }}
         env:
           GITHUB_AUTH: ${{secrets.GITHUB_TOKEN}}
         run: |
@@ -92,11 +82,3 @@ jobs:
             ${{ steps.get-new-version-and-description.outputs.NEW_CHANGES }}
 
             **Don't squash merge this PR**
-
-      - name: Slack Notification
-        if: ${{ steps.check-if-pr-already-exists.outputs.is-pr-already-created == 'false' }}
-        uses: tokorom/action-slack-incoming-webhook@main
-        env:
-          INCOMING_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK }}
-        with:
-          text: "👾 Hello TheExpert team! New RC (${{ steps.get-new-version-and-description.outputs.NEW_VERSION }}) was created! Please take a look at this PR and test the items on the list that are assigned to you. If the feature is tested and working as expected, mark this item as done. https://github.com/sudolabs-io/the-expert/pull/${{ steps.create-pr.outputs.pull-id }} :fire:"
