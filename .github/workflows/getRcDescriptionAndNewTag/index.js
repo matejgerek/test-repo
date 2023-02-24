@@ -15,6 +15,7 @@ const getRcDescriptionAndNewTagWithSemanticRelease = async () => {
         );
 
         console.log(result);
+        console.log('result.nextRelease', result.nextRelease);
     } catch (error) {
         console.log(error);
     }
