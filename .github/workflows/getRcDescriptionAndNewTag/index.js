@@ -1,6 +1,7 @@
 import {exec} from "child_process";
 import {promisify} from "util";
 import semanticRelease from "semantic-release";
+import * as core from "@actions/core";
 
 const execAsync = promisify(exec);
 
@@ -15,7 +16,9 @@ const getRcDescriptionAndNewTagWithSemanticRelease = async () => {
         );
 
         console.log(result);
-        console.log('end')
+
+        core.setOutput('NEW_VERSION', result.nextRelease.version);
+        core.setOutput('NEW_CHANGES', result.nextRelease.notes);
     } catch (error) {
         console.log(error);
     }
