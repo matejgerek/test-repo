@@ -1,5 +1,6 @@
-const { exec } = require("child_process");
-const { promisify } = require("util");
+import {exec} from "child_process";
+import {promisify} from "util";
+
 const execAsync = promisify(exec);
 
 const getRcDescriptionAndNewTagWithSemanticRelease = async () => {
