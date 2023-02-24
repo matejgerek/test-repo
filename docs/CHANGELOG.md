@@ -1,3 +1,24 @@
+## [2.2.0](https://github.com/matejgerek/test-repo/compare/v2.1.0...v2.2.0) (2023-02-24)
+
+
+### :sparkles: Features
+
+* add git plugin ([25bd8f7](https://github.com/matejgerek/test-repo/commit/25bd8f7d6502df3158eaf77f6e8cec1719f5163e))
+* add new ([f6011de](https://github.com/matejgerek/test-repo/commit/f6011de9e75dd81779fa407d53772f5bba5b2d9f))
+* remove step ([d2dfa00](https://github.com/matejgerek/test-repo/commit/d2dfa004ea37856296b714b77b9172fc811b1447))
+
+
+### :bug: Bug Fixes
+
+* add await ([6aa9997](https://github.com/matejgerek/test-repo/commit/6aa999758ea7d153e988f101f67d053d46fec4d4))
+* add permissions ([88f0a32](https://github.com/matejgerek/test-repo/commit/88f0a32c96299337ce87b408872695142d798ec1))
+* add semanticRelease js api ([18eca62](https://github.com/matejgerek/test-repo/commit/18eca621d4078c733f7fd60de59032c237f407d4))
+* add staging branch to configuration ([75d8c0d](https://github.com/matejgerek/test-repo/commit/75d8c0d5637e67edec2a90ede873d87dc6d04651))
+* add workflow ([b58ffb1](https://github.com/matejgerek/test-repo/commit/b58ffb1ca8ff29b2e911c22bcd2aa4e14bbc6d78))
+* change github token to semantic release ([ab93201](https://github.com/matejgerek/test-repo/commit/ab932015f34085387ef8419f2458481d78e47808))
+* node version ([b612c48](https://github.com/matejgerek/test-repo/commit/b612c48b08cf87b31cb89727cabfdf4614ac252e))
+* remove require ([1f3eb5f](https://github.com/matejgerek/test-repo/commit/1f3eb5f19eac70e9d129d79b41d114a4de718259))
+
 ## [2.1.0](https://github.com/matejgerek/test-repo/compare/v2.0.1...v2.1.0) (2023-02-24)
 
 
