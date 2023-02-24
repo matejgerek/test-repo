@@ -9,8 +9,8 @@ const getRcDescriptionAndNewTagWithSemanticRelease = async () => {
         const result = semanticRelease({
             dryRun: true,
             plugins: [
-                "@semantic-release/commit-analyzer",
                 "@semantic-release/release-notes-generator",
+                "@semantic-release/git"
                 ],
         });
 
